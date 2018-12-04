@@ -4,6 +4,7 @@ import "./App.css";
 import axios from "axios";
 import BookOrMovieComponent from "./BookOrMovieComponent";
 import ReviewComparator from "./ReviewComparator";
+import Header from './Header';
 
 const TMBDKey = process.env.REACT_APP_TMDB_KEY;
 
@@ -114,8 +115,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Header/>
         <div className="AppContainer">
-          <h1>Is the Book Better, or the Movie?</h1>
+        
           <input
             type="text"
             onChange={this.handleBookChange}
