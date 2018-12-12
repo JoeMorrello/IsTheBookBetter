@@ -4,10 +4,9 @@ import "./App.css";
 import axios from "axios";
 import BookOrMovieComponent from "./BookOrMovieComponent";
 import ReviewComparator from "./ReviewComparator";
-import Header from './Header';
+import Header from "./Header";
 
 const TMBDKey = process.env.REACT_APP_TMDB_KEY;
-
 
 class App extends Component {
   constructor() {
@@ -111,15 +110,16 @@ class App extends Component {
       });
     }
   }
-
+//TODO: Need to make the images scale better, for better responsive design?
   render() {
     return (
       <div className="App">
-      <Header/>
-        <div className="AppContainer">
-        
+        <Header />
+        <div className="SearchContainer">
           <input
+          className="textInput"
             type="text"
+            placeholder="Type the book or movie here to check!"
             onChange={this.handleBookChange}
             value={this.state.titleSearch}
             onKeyPress={this.handleKeyPress}
@@ -128,15 +128,16 @@ class App extends Component {
             Submit
           </button>
         </div>
-        <div className="comparisonContainer">
-          {this.state.book.loaded && (
+        {this.state.book.loaded && this.state.movie.loaded && (
+          <div className="ComparisonTitle">
+          <h2>{this.state.book.title}</h2>
+          <h3>{this.state.book.author}</h3>
+          <div className="comparisonContainer">
             <BookOrMovieComponent item={this.state.book} />
-          )}
-          {this.state.movie.loaded && (
             <BookOrMovieComponent item={this.state.movie} />
-          )}
-        </div>
-        {this.state.book && this.state.movie.loaded && (
+          </div>
+          </div>        )}
+        {this.state.book.loaded && this.state.movie.loaded && (
           <ReviewComparator phrasing={this.state.whichIsBetter} />
         )}
       </div>

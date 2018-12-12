@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class ReviewComparator extends Component {
   render() {
-    return <div>{this.props.phrasing}</div>;
+    return <div className="Results" >{this.props.phrasing}</div>;
   }
 }
 

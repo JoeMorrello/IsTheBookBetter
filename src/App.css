@@ -1,53 +1,28 @@
+:root {
+  --main-bg-color:#27365f;
+  --main-text-color:#f4f4f2;
+  --light-accent-color:#aeafb4;
+  --dark-accent-color:#8f7987;
+  --eye-popper-color:#ee6f53;
+}
+
 
 body{
-  background-color: #ffffff;
+  background-color: var(--main-bg-color);
   padding:0;
   margin:0;
+  color:var(--main-text-color)
 }
 .App {
   text-align: center;
   margin: 0;
   padding: 0;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.image{
-  padding: 5px;
-  max-height:300px;
-  max-width:300px;
-  align-content: center;
-}
 .comparisonContainer{
+  background-color:none;
+  border-radius: 10px;
   display: inline-flex;
   align-content: center;
-  padding:10px;
 }
 .ComparisonComponent{
   padding:10px;
@@ -57,47 +32,35 @@ body{
 }
 .submitButton{
   border:0px;
-  background-color: #747572;
+  background-color: var(--eye-popper-color);
   font-family: inherit;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
-  padding: 10px; 
-  background-image: linear-gradient(
-    	to right,
-	    #410b13,
-      #410b13 50%,
-	    #393e41 50%);
-	    background-size: 200% 100%;
-      background-position: 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-}
-.submitButton:hover {
-  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
-  background-position: 0%;
-}
-.AppContainer{
-  color: #410b13;
+  padding: 5px; 
+  margin:10px;
+  border-radius: 3px;
 }
 .Header{
   margin:0;
   padding:0;
   width:100%;
-  background-color: red;
+  background-color:#111B36;
+  color:var( --light-accent-color);
 }
 .HeaderText{
+  color:var( --light-accent-color);
   margin:0;
   padding:5px;
 }
 .left{
-text-align: left;
-width:80%;
-vertical-align:middle;
+  text-align: left;
+  width:70%;
+  vertical-align:middle;
 }
 .right{
   text-align: right;
-  width:20%;
+  width:30%;
   margin:auto;
   vertical-align:middle;
 }
@@ -112,7 +75,32 @@ vertical-align:middle;
   font-size: 16px;
   text-align: center;
   padding: 10px; 
+  color:var(--light-accent-color);
 }
 .left, .right {
   display: inline-block;
+}
+.BookOrMovieComponent{
+  padding:15px;
+}
+.ComparisonTitle{
+ background-color:#111B36;
+  align-content: center;
+  padding-top:10px;
+  margin:auto;
+  width:80%;
+  border-radius:5px;
+}
+.SearchContainer{
+  padding:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.textInput{
+  width: 260px;
+  text-align: center;
+}
+.Results{
+  margin: 10px;
 }
